@@ -58,3 +58,8 @@ addForm.addEventListener('submit', (e) => {
   titleInput.value = '';
   authorInput.value = '';
 });
+
+// window.onload event handler
+window.onload = () => {
+  displayBooks();
+};

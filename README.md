@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Capstone-project-Music-Festival-Website] <a name="about-project"></a>
+# 📖 [Awesome Books] <a name="about-project"></a>
 
 
 
