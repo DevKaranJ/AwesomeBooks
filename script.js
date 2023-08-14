@@ -1,11 +1,11 @@
 // DOM elements
-let addForm = document.querySelector('#books');
-let titleInput = document.querySelector('#title');
-let authorInput = document.querySelector('#author');
-let bookList = document.querySelector('#book-list');
+const addForm = document.querySelector('#books');
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const bookList = document.querySelector('#book-list');
 
 // Saving & Accessing Data to local storage 
-let books = JSON.parse(localStorage.getItem('books')) || [];
+const books = JSON.parse(localStorage.getItem('books')) || [];
 
 // Function to display books
 function displayBooks() {
@@ -25,9 +25,29 @@ function displayBooks() {
   });
 }
 
-// Function to add a bookadd your code below
+// Function to add a book
+function addBook(title, author) {
+  if (title.trim() === '' || author.trim() === '') {
+    return;
+  }
 
-// Function to remove a book add your code below 
+  let newBook = {
+    title: title,
+    author: author
+  };
+
+  books.push(newBook);
+  localStorage.setItem('books', JSON.stringify(books));
+
+  displayBooks();
+}
+
+// Function to remove a book
+function removeBook(index) {
+  books.splice(index, 1);
+  localStorage.setItem('books', JSON.stringify(books));
+  displayBooks();
+}
 
 // Event listener Submit Button
 addForm.addEventListener('submit', (e) => {
@@ -40,3 +60,4 @@ addForm.addEventListener('submit', (e) => {
 });
 
 displayBooks();
+
