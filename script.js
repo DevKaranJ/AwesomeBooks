@@ -4,17 +4,24 @@ const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
 const bookList = document.querySelector('#book-list');
 
-// Saving & Accessing Data to local storage 
+// Saving & Accessing Data to local storage
 const books = JSON.parse(localStorage.getItem('books')) || [];
+
+// Function to remove a book
+function removeBook(index) {
+  books.splice(index, 1);
+  localStorage.setItem('books', JSON.stringify(books));
+  displayBooks();
+}
 
 // Function to display books
 function displayBooks() {
   bookList.innerHTML = '';
   books.forEach((book, index) => {
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     li.textContent = `${book.title} by ${book.author}`;
-    
-    let removeButton = document.createElement('button');
+
+    const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
     removeButton.addEventListener('click', () => {
       removeBook(index);
@@ -31,9 +38,9 @@ function addBook(title, author) {
     return;
   }
 
-  let newBook = {
-    title: title,
-    author: author
+  const newBook = {
+    title,
+    author,
   };
 
   books.push(newBook);
@@ -42,22 +49,12 @@ function addBook(title, author) {
   displayBooks();
 }
 
-// Function to remove a book
-function removeBook(index) {
-  books.splice(index, 1);
-  localStorage.setItem('books', JSON.stringify(books));
-  displayBooks();
-}
-
 // Event listener Submit Button
 addForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  let title = titleInput.value;
-  let author = authorInput.value;
+  const title = titleInput.value;
+  const author = authorInput.value;
   addBook(title, author);
   titleInput.value = '';
   authorInput.value = '';
 });
-
-displayBooks();
-
