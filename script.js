@@ -10,7 +10,14 @@ class BookManager {
   }
 
   // Handle form submission
-  
+  handleFormSubmit(e) {
+    e.preventDefault();
+    const title = this.titleInput.value;
+    const author = this.authorInput.value;
+    this.addBook(title, author);
+    this.titleInput.value = '';
+    this.authorInput.value = '';
+  }
 
   // Function to add a book
   addBook(title, author) {
@@ -40,7 +47,7 @@ class BookManager {
     this.bookList.innerHTML = '';
     this.books.forEach((book, index) => {
       const li = document.createElement('li');
-      li.textContent = `${book.title} by ${book.author}`;
+      li.textContent = `${book.title} By ${book.author}`;
 
       const removeButton = document.createElement('button');
       removeButton.textContent = 'Remove';
