@@ -87,6 +87,5 @@ class BookManager {
     contentSection.style.display = 'block';
   }
 }
-
 const bookManagerDisplay = new BookManager();
 bookManagerDisplay();
