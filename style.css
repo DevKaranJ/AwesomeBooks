@@ -11,17 +11,18 @@ body {
 }
 
 .main-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  text-align: center;
   flex-direction: column;
   flex-wrap: wrap;
+  margin: auto;
+  padding: 24px;
 }
 
 .book-contente {
-  width: 80%;
+  width: auto;
   border: 2px solid black;
   margin: 15px 0 15px 0;
 }
@@ -44,6 +45,7 @@ button {
   box-shadow: 0 0 10px 2px #000;
   -webkit-animation: zoom 0.5s ease-in-out;
   animation: zoom 0.5s ease-in-out;
+  padding: 4px;
 }
 
 @keyframes zoom {
@@ -66,4 +68,67 @@ button {
 .booksSubmission {
   display: flex;
   flex-direction: column;
+}
+
+input {
+  padding: 4px;
+}
+
+footer {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin: 24px 0;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    width: 100%;
+    list-style: none;
+    align-items: center;
+    border: 1px solid;
+  }
+
+  .heading {
+    align-items: center;
+    margin-left: 40px;
+    font-size: 29px;
+    font-weight: 800;
+  }
+
+  .nav-bar {
+    font-family: sans-serif;
+    float: right;
+    display: flex;
+    margin: -2.5rem  3rem;
+    font-size: 22px;
+    font-weight: 600;
+    gap: 24px;
+    list-style: none;
+    padding: 8px;
+  }
+
+  .date-section a {
+    float: right;
+    margin: 0.5rem 3rem;
+    text-decoration: none;
+  }
+
+  .nav-bar li a {
+    text-decoration: none;
+    padding: 0 0 0 6px;
+    color: rgb(20, 18, 18);
+  }
+
+  .nav-bar li a:hover {
+    color: rgb(0, 0, 255);
+  }
+
+  .item2 {
+    border-left: 2px solid;
+  }
+
+  .item3 {
+    border-left: 2px solid;
+  }
 }
