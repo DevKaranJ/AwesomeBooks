@@ -84,4 +84,3 @@ class BookManager {
 
 const bookManagerDisplay = new BookManager();
 bookManagerDisplay();
-
