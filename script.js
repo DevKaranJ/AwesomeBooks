@@ -21,6 +21,8 @@ class BookManager {
     document.querySelector('.item3 a').addEventListener('click', () => {
       this.showContent(this.contactContent);
     });
+
+    this.hideAllContent();
   }
 
   // Handle form submission
@@ -74,13 +76,16 @@ class BookManager {
     });
   }
 
-  showContent(contentSection) {
+  hideAllContent() {
     this.listContent.style.display = 'none';
     this.addNewContent.style.display = 'none';
     this.contactContent.style.display = 'none';
+  }
+
+  showContent(contentSection) {
+    this.hideAllContent();
     contentSection.style.display = 'block';
   }
 }
 
 const bookManagerDisplay = new BookManager();
-bookManagerDisplay();
