@@ -10,6 +10,51 @@ body {
   font-weight: 300;
 }
 
+header {
+  width: 100%;
+  list-style: none;
+  align-items: center;
+  border: 1px solid;
+  padding: 10px;
+}
+
+.heading {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.nav-bar {
+  font-family: 'roboto slab', serif;
+  float: right;
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 8px;
+  margin-top: -1.5rem;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.date-section a {
+  text-align: right;
+  float: right;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+.nav-bar li a {
+  text-decoration: none;
+  padding-left: 2px;
+}
+
+.item2 {
+  border-left: 2px solid;
+}
+
+.item3 {
+  border-left: 2px solid;
+}
+
 .main-container {
   width: 100%;
   display: flex;
@@ -21,24 +66,20 @@ body {
   padding: 24px;
 }
 
-.book-contente {
-  width: auto;
+.book-content {
+  width: 100%;
+  height: auto;
   border: 2px solid black;
   margin: 15px 0 15px 0;
+  padding: 12px;
 }
 
-.book-contente ul {
-  list-style: none;
-  display: flex;
-  height: auto;
-  flex-direction: column;
-  padding: 30px 30px;
-}
-
-.book-contente ul li {
-  margin: 10px 0;
-  font-size: 20px;
-  font-weight: 600;
+.book-content ul li {
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 12px 0;
+  background-color: azure;
 }
 
 button {
@@ -46,6 +87,7 @@ button {
   -webkit-animation: zoom 0.5s ease-in-out;
   animation: zoom 0.5s ease-in-out;
   padding: 4px;
+  float: right;
 }
 
 @keyframes zoom {
@@ -108,17 +150,14 @@ footer {
     padding: 8px;
   }
 
-  .date-section {
-    text-align: right;
-    margin: 0.5rem 6rem;
-  }
-
   .date-section a {
     font-family: 'Roboto Slab', serif;
     text-decoration: none;
     color: #333;
     font-size: 16px;
     float: right;
+    padding-top: 1rem;
+    margin-right: 3rem;
   }
 
   .nav-bar li a {
@@ -137,6 +176,22 @@ footer {
 
   .item3 {
     border-left: 2px solid;
+  }
+
+  .book-content {
+    width: 530px;
+    height: auto;
+    border: 2px solid black;
+    margin: 15px 0 15px 0;
+    padding: 12px;
+  }
+
+  .book-content ul li {
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 12px 0;
+    background-color: azure;
   }
 }
 
