@@ -5,8 +5,24 @@ class BookManager {
     this.titleInput = document.querySelector('#title');
     this.authorInput = document.querySelector('#author');
     this.bookList = document.querySelector('#book-list');
+    this.listContent = document.querySelector('#listContent');
+    this.addNewContent = document.querySelector('#addNewContent');
+    this.contactContent = document.querySelector('#contactContent');
+
     this.addForm.addEventListener('submit', this.handleFormSubmit.bind(this)); // form submit event handler
     window.onload = this.displayBooks.bind(this); // window.onload event handler
+
+    document.querySelector('.item1 a').addEventListener('click', () => {
+      this.showContent(this.listContent);
+    });
+    document.querySelector('.item2 a').addEventListener('click', () => {
+      this.showContent(this.addNewContent);
+    });
+    document.querySelector('.item3 a').addEventListener('click', () => {
+      this.showContent(this.contactContent);
+    });
+
+    this.hideAllContent();
   }
 
   // Handle form submission
@@ -59,7 +75,17 @@ class BookManager {
       this.bookList.appendChild(li);
     });
   }
-}
 
+  hideAllContent() {
+    this.listContent.style.display = 'none';
+    this.addNewContent.style.display = 'none';
+    this.contactContent.style.display = 'none';
+  }
+
+  showContent(contentSection) {
+    this.hideAllContent();
+    contentSection.style.display = 'block';
+  }
+}
 const bookManagerDisplay = new BookManager();
 bookManagerDisplay();
